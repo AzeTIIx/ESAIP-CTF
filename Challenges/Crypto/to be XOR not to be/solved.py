@@ -19,3 +19,4 @@ for key in secret_key:
     if "ESAIP{" in decrypted_string:
         print(f"Found flag: {decrypted_string}")
         break
+#Found flag: ESAIP{x0r3d}
