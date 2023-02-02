@@ -27,7 +27,6 @@ def encrypt(plain, pubkey):
 
 def decrypt(cypher, prikey):
     message = rsa.decrypt(cypher, prikey)
-    return message
 
 def handleBase64String(InputString, prikey):
     decText = decrypt(InputString, prikey)
@@ -48,7 +47,6 @@ def main():
     if isBase64(InputString):
         print("Message already encrypted")
     else :
-        pubkey, prikey = key_pair_generation()
         encrypted = handleString(InputString, pubkey)
         print("Encrypted text is : {}" .format(encrypted))
         decrypted = handleBase64String(encrypted, prikey)
