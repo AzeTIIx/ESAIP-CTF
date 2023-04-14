@@ -6,6 +6,6 @@
 	if(session_destroy())
 	{
 		// Redirection vers la page de connexion
-		header("Location: connexion");
+		header("Location: connexion.php");
 	}
 ?>

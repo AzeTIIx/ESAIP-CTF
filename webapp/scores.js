@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $.ajax({
         url: "http://localhost:80/ProjetMajeure/getData.php",
-
+      
         type: "GET",
         success: function(data) {
             //console.log(data);
@@ -9,6 +9,7 @@ $(document).ready(function() {
             var temps = [];
 
             const users = {};
+
             for (let i = 0; i < data.length; i++) {
                 temps.push(data[i].temps);
                 let entry = data[i];
@@ -28,9 +29,8 @@ $(document).ready(function() {
             var chartdata = {
               labels: temps,
               datasets: [],
-
             };
-            
+      
 
           for (var player in users) {
               chartdata.datasets.push({
@@ -56,7 +56,7 @@ $(document).ready(function() {
               chartdata.datasets[chartdata.datasets.length - 1].data.push({
                   x: temps[temps.length - 1],
                   y: lastValue,
-                  r: 2
+                  r: 2,
               });
           }
 
@@ -72,6 +72,7 @@ $(document).ready(function() {
                           scaleLabel: {
                             display: true,
                             labelString: 'Date',
+                            fontFamily: 'Courier New'
                           }
                         }
                       ],
@@ -79,12 +80,13 @@ $(document).ready(function() {
                         {
                           scaleLabel: {
                             display: true,
-                            labelString: 'Points',
+                            labelString: 'Point',
+                            fontFamily: 'Courier New'
                           }
                         }
                       ]
                     }
-                  }
+                }
             });
         },
         error: function(data) {

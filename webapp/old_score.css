@@ -74,19 +74,15 @@ html, body{margin:0; padding:0;}
 
 /* ******************** SCROLL BAR ******************** */
 ::-webkit-scrollbar{
-  width: 8px;
-  background-color: rgba(41, 49, 51, 0.9);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-track{
-  background-color: none;
-}
-
+    width: 8px;
+    background-color: rgba(41, 49, 51, 0.9);
+    border-radius: 10px;
+  }
+  
 ::-webkit-scrollbar-thumb{
-  background-color: black;
-  background-color: rgba(41, 49, 51, 0.6);
-  border-radius: 10px;
+    background-color: black;
+    background-color: rgba(41, 49, 51, 0.6);
+    border-radius: 10px;
 }
 
 /* ******************** LOGO ******************** */
@@ -363,11 +359,26 @@ img{
   }
 }
 
-/* ******************** BODY ******************** */
+/* ******************** GRAPH ******************** */
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin-right: 10vh; margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .chart-container{
+    width: 80%;
+    margin-right: 5%; margin-top: 30px;
+  }
+}
+
+/* ******************** TAB ******************** */
 .msg{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding-top: 14vh; padding-bottom: 50px;
 }
@@ -376,96 +387,74 @@ img{
   color: white;
   padding-top: 50px; padding-bottom: 25px;
 }
-
 .msg-title{
   font-family: 'kionaregular';
   font-size: 30px;
 }
 
-.c-txt::-webkit-scrollbar {
-  width: 0;height: 0;
-}
-
-/* ******************** TABLE ******************** */
 .clasM{
-  width: 100%; height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 13vh;
-  background-color: #2B2B2B;
+    width: 100%; height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 13vh;
+    background-color: #2B2B2B;
 }
 
 table {
-  font-family: 'chuterolkbold';
-  border-collapse: collapse;
-  width: 650px;
-  margin: auto;
-  margin-bottom: 17vh;
+    font-family: 'chuterolkbold';
+    border-collapse: collapse;
+    width: 650px;
+    margin: auto;
+    margin-bottom: 17vh;
+}
+  
+  td, th {
+    padding: 8px; color: #383E42;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #D8D8D8;
+  }
+  tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
+  
+  th {
+    background-color: #242424;
+    color: #dddddd;
+    font-size: 17px;
+    font-family: 'prestageregular';
+    letter-spacing: 0.2vh;
 }
 
-td, th {
-  padding: 8px; color: #383E42;
-}
-
-tr:nth-child(even) {
-  background-color: #D8D8D8;
-}
-tr:nth-child(odd) {
-  background-color: #dddddd;
-}
-
-th {
-  background-color: #242424;
-  color: #dddddd;
-  font-size: 17px;
-  font-family: 'prestageregular';
-  letter-spacing: 0.2vh;
-}
-
-td{
-  color: #2B2B2B;
-  font-family:'Courier New', Courier, monospace;
-  font-size: 11px;
+  td{
+    color: #2B2B2B;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 11px;
 }
 
 tr:first-child th:first-child {
-border-radius: 6px 0 0 0;
+	border-radius: 6px 0 0 0;
 }
 
 tr:first-child th:last-child {
-border-radius: 0 6px 0 0;
+	border-radius: 0 6px 0 0;
 }
 
 tr:last-child td:last-child {
-border-radius: 0 0 4px 0;
+	border-radius: 0 0 4px 0;
 }
 
 tr:last-child td:first-child {
-border-radius: 0 0 0 4px;
+	border-radius: 0 0 0 4px;
 }
 
 @media (max-width: 850px) {
-table{
-  width:70%;
-}
-}
-/* ******************** GRAPH ******************** */
-.chart-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 610px;
-  margin-right: 10vh; margin-top: 30px;
-}
-
-@media (max-width: 680px) {
-  .chart-container{
-    width: 90%;
-    margin-right: 5%; margin-top: 30px;
+  table{
+    width:70%;
   }
 }
-
 /* ******************** FOOTER ******************** */
 
 .ft{

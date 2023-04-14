@@ -2,11 +2,25 @@
 
 function getTopTenUsers() {
 
-    include_once("config.php");
+ 
+    // Informations d'identification
+    define('DB_SERVER', 'localhost');
+    define('DB_USERNAME', 'root');
+    define('DB_PASSWORD', '');
+    define('DB_NAME', 'ctf');
+    
+    
+    // Connexion à la base de données MySQL 
+    $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    
+    // Vérifier la connexion
+    if($conn === false){
+        die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
+    }
 
     $sql = "SELECT username, MAX(points) as points FROM tableaupoints GROUP BY username ORDER BY points DESC";
     $result = mysqli_query($conn, $sql);
-    
+
     if (mysqli_num_rows($result) > 0) {
         $users = array();
         while ($row = mysqli_fetch_assoc($result)) {
