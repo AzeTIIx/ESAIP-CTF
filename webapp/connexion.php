@@ -139,7 +139,7 @@
 
             $email = stripslashes($_REQUEST['email']);
             $email = mysqli_real_escape_string($conn, $email);
-            $_SESSION['email'] = $email;
+            
 
 
             $query = "SELECT * FROM `users` WHERE email='$email' and password='".hash('sha256', $password)."'";
@@ -148,6 +148,7 @@
           
             
             if (mysqli_num_rows($result) == 1) {
+              $_SESSION['email'] = $email;
               $user = mysqli_fetch_assoc($result);
 
               // vérifier si l'utilisateur est un administrateur ou un utilisateur
