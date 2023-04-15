@@ -55,7 +55,7 @@ echo "
   }
   
 echo "</table>"
-?>
+
 
    
 function getflag($conn) {
