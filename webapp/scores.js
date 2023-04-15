@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:80/ProjetMajeure/getData.php",
+        url: "http://localhost:80/getData.php",
       
         type: "GET",
         success: function(data) {
