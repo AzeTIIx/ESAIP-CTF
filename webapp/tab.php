@@ -43,7 +43,7 @@ echo "
     </tr>
 ";
 
-  $users = getTopTenUsers();
+  $users = getTopTenUsers($conn);
   $rank = 1;
   foreach ($users as $user) {
       echo "<tr>";
