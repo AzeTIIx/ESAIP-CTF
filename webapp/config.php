@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 'Off');
 // Informations d'identification
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
