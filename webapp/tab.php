@@ -54,7 +54,7 @@ echo "
       $rank++;
   }
   
-echo "</table>"
+echo "</table>";
 
 
    
