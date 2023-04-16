@@ -7,7 +7,6 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.29.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
         <script src="scores.js"></script>
     </head>
 
@@ -134,7 +133,33 @@
         </article>
 
         <div class="clasM">
-            <?php include("tab.php"); ?>
+            <?php include("tab.php");
+            
+            echo " 
+            <div class='msg-title'><div class='msg2'>Classement des joueurs
+            <hr width='80%' size='2,5' color='#7C1520'/></div></div>
+            <table border-radius='20px' align='center'>
+                <tr>
+                    <th>NUMERO</th>
+                    <th>NOM D'UTILISATEUR</th>
+                    <th>POINTS</th>
+                </tr>
+            ";
+            
+            $users = getTopTenUsers($conn);
+            $rank = 1;
+            foreach ($users as $user) {
+                echo "<tr>";
+                echo "<td align='center'>" . $rank . "</td>";
+                echo "<td align='center'>" . $user['username'] . "</td>";
+                echo "<td align='center'>" . $user['points'] . "</td>";
+                echo "</tr>";
+                $rank++;
+            }
+            
+          echo "</table>";
+            ?>
+        
         </div>
 
         <footer>
