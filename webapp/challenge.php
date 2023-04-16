@@ -128,6 +128,16 @@
         </div>
       </div>
     </header>
+    
+
+    <!--Recuperation de l'id du user-->
+    <?php
+        $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$username'";
+        $resultuser = mysqli_query($conn, $queryuser);
+        $rowuser = mysqli_fetch_assoc($resultuser); // Fetch the result as an associative array
+        $user_id = $rowuser['id_user'];
+    ?>
+
     <!--les articles entourent un bloc de contenu (une unité)-->
     <!--les sections servent à contenir une partie isolée de la page (une fonctionnalité)-->
     <article class="corpus">
@@ -147,10 +157,6 @@
               <div class="num">01</div>
               <div class="c-title">Trop Haché</div> 
                 <?php
-                    $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$username'";
-                    $resultuser = mysqli_query($conn, $queryuser);
-                    $rowuser = mysqli_fetch_assoc($resultuser); // Fetch the result as an associative array
-                    $user_id = $rowuser['id_user'];
                     $querycheckchallenge = "SELECT `status` FROM `submissions` 
                     LEFT JOIN `users` ON user_id =`id_user`
                     LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
