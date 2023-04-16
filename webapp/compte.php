@@ -1,13 +1,3 @@
-﻿<?php
-	// Initialiser la session
-	session_start();
-	// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-	if(!isset($_SESSION["email"])){
-		header("Location: login.php");
-		exit(); 
-	}
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,7 +24,7 @@
               }
         </script>
 
-        <header>  
+<header>  
             <div id="root">
                 <div id="topnav" class="topnav">
                     <div class="logo">
@@ -42,16 +32,37 @@
                     </div>
                     
                     <?php
-                        function is_connected() {
-                            if(isset($_SESSION['email']) && isset($_SESSION['password'])) { // Vérifie si l'email de l'utilisateur est présent dans la session
-                                return true;
-                            }
-                            else {
-                                return false;
-                            }
-                        }
-                        
-                        if(is_connected()) { ?>
+                        session_start();
+                        if(!isset($_SESSION["email"])) { ?>
+                            <!-- Classic Menu -->
+                            <nav role="navigation" id="topnav_menu">
+                                <ul>
+                                    <li><a class="topnav_link" href="accueil.php">ACCUEIL</a></li>
+                                    <li><a class="topnav_link" href="challenge.php">CHALLENGE</a></li>
+                                    <li><a class="topnav_link" href="score.php">SCORE</a></li>
+                                    <li class="login"><a class="topnav_link" href="connexion.php">SE CONNECTER</a></li>
+                                </ul>
+                            </nav>
+
+                            <a id="topnav_hamburger_icon" href="javascript:void(0);" onclick="showResponsiveMenu()">
+                            <!-- Some spans to act as a hamburger -->
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            </a>
+
+                            <!-- Responsive Menu -->
+                            <nav role="navigation" id="topnav_responsive_menu">
+                                <ul>
+                                    <li><a class="topnav_link" href="accueil.php">ACCUEIL</a></li>
+                                    <li><a class="topnav_link" href="challenge.php">CHALLENGE</a></li>
+                                    <li><a class="topnav_link" href="score.php">SCORE</a></li>
+                                    <li class="login"><a class="topnav_link" href="connexion.php">SE CONNECTER</a></li>
+                                    </a></li>
+                                </ul>
+                            </nav>
+                        <?php }
+                        else{ ?>
                             <!-- Classic Menu -->
                             <nav role="navigation" id="topnav_menu">
                                 <ul>
@@ -89,34 +100,6 @@
                                 </ul>
                             </nav>
                         <?php }
-                        else{ ?>
-                            <!-- Classic Menu -->
-                            <nav role="navigation" id="topnav_menu">
-                                <ul>
-                                    <li><a class="topnav_link" href="accueil.php">ACCUEIL</a></li>
-                                    <li><a class="topnav_link" href="challenge.php">CHALLENGE</a></li>
-                                    <li><a class="topnav_link" href="score.php">SCORE</a></li>
-                                    <li class="login"><a class="topnav_link" href="connexion.php">SE CONNECTER</a></li>
-                                </ul>
-                            </nav>
-
-                            <a id="topnav_hamburger_icon" href="javascript:void(0);" onclick="showResponsiveMenu()">
-                            <!-- Some spans to act as a hamburger -->
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            </a>
-
-                            <!-- Responsive Menu -->
-                            <nav role="navigation" id="topnav_responsive_menu">
-                                <ul>
-                                    <li><a class="topnav_link" href="accueil.php">ACCUEIL</a></li>
-                                    <li><a class="topnav_link" href="challenge.php">CHALLENGE</a></li>
-                                    <li><a class="topnav_link" href="score.php">SCORE</a></li>
-                                    <li class="login"><a class="topnav_link" href="connexion.php">SE CONNECTER</a></li>
-                                </ul>
-                            </nav>
-                        <?php }
                     ?>
                 </div>
             </div>
@@ -141,6 +124,19 @@
                     $row = mysqli_fetch_assoc($result);
                     $username = $row['username'];
                     echo $username; ?>!</h1>
+                    <?php
+                    $querypoint="SELECT points FROM `tableaupoints`
+                    WHERE username ='$username'
+                    ORDER BY points DESC
+                    LIMIT 1"; 
+                    $resultpoint = mysqli_query($conn, $querypoint);
+                    $rowpoint = mysqli_fetch_assoc($resultpoint); // Fetch the result as an associative array
+                    $point = $rowpoint['points'];
+                    
+                    echo $point;
+
+                    ?>
+
 					<p>Voici votre espace utilisateur.</p>
 					<br><a href="logout.php">Déconnexion</a>
 					<a href="score.php">Score</a>
