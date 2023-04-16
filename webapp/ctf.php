@@ -143,30 +143,25 @@
         <div class="c-article">
           <div class="c-high">
             <div class="c-info">
-              <div class="c-descri"> <?php
-                                $statue ="";
-                                $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$username'";
-                                $resultuser = mysqli_query($conn, $queryuser);
-                                $rowuser = mysqli_fetch_assoc($resultuser); // Fetch the result as an associative array
-                                $user_id = $rowuser['id_user'];
-                                $querycheckchallenge = "SELECT `status` FROM `submissions` 
-                                LEFT JOIN `users` ON user_id =`id_user`
-                                LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
-                                WHERE `name` ='Trop hache' AND `user_id`='$user_id';";
-                                $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
-                                $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
-                                $nombreligne = mysqli_num_rows($resultcheckchallenge);
-                                if ($nombreligne == 1) {
-                                    echo '
-										
-										<img class="c-etat" src="media/vrai.png">';
-                                }
-                                else {
-                                    echo '
-											
-											<img class="c-etat" src="media/faux.png">';
-                                }
-                                ?> <div class="num">01</div>
+              <div class="c-descri"> 
+                <?php
+                    $statue ="";
+                    $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$username'";
+                    $resultuser = mysqli_query($conn, $queryuser);
+                    $rowuser = mysqli_fetch_assoc($resultuser); // Fetch the result as an associative array
+                    $user_id = $rowuser['id_user'];
+                    $querycheckchallenge = "SELECT `status` FROM `submissions` 
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Trop hache' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+
+                    if ($nombreligne == 1) { echo '<img class="c-etat" src="media/vrai.png">'; }
+                    else { echo '<img class="c-etat" src="media/faux.png">'; }
+                ?> 
+                <div class="num">01</div>
                 <div class="c-title">Trop Haché</div>
               </div>
               <div class="c-statut"> Valeur des points : <br>
@@ -176,7 +171,9 @@
             <a href="challenge.php#c-article" class="croix"></a>
           </div>
           <div class="c-low"> Description du challenge ici. <br>Plusieurs lignes. </div>
-        </div> <?php getflag($conn,"Trop hache",$username); ?>
+        </div>
+        <!-- Formulaire du flag -->
+        <?php getflag($conn,"Trop hache",$username); ?>
       </section>
     </article>
     <footer>
