@@ -28,33 +28,9 @@ function getTopTenUsers($conn) {
   
     // Return the top 10 users
     return array_slice($users, 0, 10);
+
   }
 
-
-
-echo " 
-<div class='msg-title'><div class='msg2'>Classement des joueurs
-<hr width='80%' size='2,5' color='#7C1520'/></div></div>
-<table border-radius='20px' align='center'>
-    <tr>
-        <th>NUMERO</th>
-        <th>NOM D'UTILISATEUR</th>
-        <th>POINTS</th>
-    </tr>
-";
-
-  $users = getTopTenUsers($conn);
-  $rank = 1;
-  foreach ($users as $user) {
-      echo "<tr>";
-      echo "<td align='center'>" . $rank . "</td>";
-      echo "<td align='center'>" . $user['username'] . "</td>";
-      echo "<td align='center'>" . $user['points'] . "</td>";
-      echo "</tr>";
-      $rank++;
-  }
-  
-echo "</table>";
 
 
    
@@ -67,8 +43,10 @@ function getflag($conn, $challenge, $user) {
   }
 
 
-  $query = "SELECT `flag` FROM `challenges` WHERE `name` = '$challenge'";
-  $result = mysqli_query($conn, $query);
+  $queryflag = "SELECT `flag` FROM `challenges` WHERE `name` = '$challenge'";
+  $resultflag = mysqli_query($conn, $queryflag);
+  $rowflag = mysqli_fetch_assoc($resultflag);
+  
 
   $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$user'";
   $resultuser = mysqli_query($conn, $queryuser);
@@ -85,7 +63,7 @@ function getflag($conn, $challenge, $user) {
     LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
     WHERE `name` ='$challenge' AND `user_id`='$user_id';";
   $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
-  $row = mysqli_fetch_assoc($resultcheckchallenge);
+  $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
 
   $nombreligne = mysqli_num_rows($resultcheckchallenge);
   //echo $nombreligne;
@@ -96,36 +74,41 @@ function getflag($conn, $challenge, $user) {
   </form>";
  } else{
   //echo $row['status'];
-  if ($row['status'] == 'valid') {
+  if ($rowcheckchallenge['status'] == 'valid') {
     echo "Vous avez déjà réussi ce challenge";
+    return true;
   }
  }
   //echo mysqli_num_rows($resultcheckchallenge);
 
 
   // Vérifier si la requête s'est exécutée avec succès
-  if ($result) {
+  if ($resultflag) {
     // Extraire la valeur de la colonne 'flag' du résultat de la requête
-    $row = mysqli_fetch_assoc($result);
-    $flagFromDB = $row['flag'];
+    $flagFromDB = $rowflag['flag'];
+    //echo $flagFromDB;
 
     // Vérifier si la clé 'flag' existe dans le tableau $_POST
     if (isset($_POST['flag'])) {
       // Récupérer la valeur soumise dans le champ de texte
       $flag = $_POST['flag'];
+      $flaghashed  = hash('sha256', $flag);
+
 
       // Vérifier si la valeur correspond à la valeur stockée dans la base de données
-      if ($flag === $flagFromDB && mysqli_num_rows($resultcheckchallenge) == 0) {
+      if ($flaghashed === $flagFromDB && mysqli_num_rows($resultcheckchallenge) == 0) {
         //echo $user_id;
-        //echo $challenge;
+         //echo $challenge;
         $queryvalid = "INSERT INTO `submissions`(`id_submission`, `status`, `timestamp`, `user_id`, `challenge_id`) 
                        VALUES (DEFAULT,'valid',CURRENT_TIMESTAMP(),'$user_id','$idchallenge')";
         $resultvalid = mysqli_query($conn, $queryvalid);
         $nombreligne=1;
         echo 'Challenge réussi !';
+        ?><script>location.reload();</script><?php
       }
       else if(mysqli_num_rows($resultcheckchallenge) == 0) {
-        echo 'pas bon';
+        echo 'Mauvaise réponse !';
+       
       }
     } else {
       // La clé 'flag' n'est pas définie dans le tableau $_POST
