@@ -123,11 +123,31 @@
                         <div id="c-article">
                             <div class="num">01</div>
                             <div class="c-title">Nom du challenge</div>
-                            <img class="etat" src="media/vrai.png">
-                            Statut : Validé
+                            <?php
+                              $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$username'";
+                              $resultuser = mysqli_query($conn, $queryuser);
+                              $rowuser = mysqli_fetch_assoc($resultuser); // Fetch the result as an associative array
+                              $user_id = $rowuser['id_user'];
+                              $querycheckchallenge = "SELECT `status` FROM `submissions` 
+                              LEFT JOIN `users` ON user_id =`id_user`
+                              LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                              WHERE `name` ='Trop hache' AND `user_id`='$user_id';";
+                              $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                              $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                              $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                                if ($nombreligne == 0) {
+                                    echo '<img class="etat" src="media/faux.png">';
+                                    echo 'Statut : Non validé';
+                                }
+                                else {
+                                    echo '<img class="etat" src="media/vrai.png">';
+                                    echo 'Statut : Validé';
+                                }
+                            ?>
                             <br><centre>Points</centre>
                             <div class="c-txt">cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cd<br>cd</div>
                         </div>
+                        
                     </a>
                     <div id="c-article">
                         <div class="num">02</div>
