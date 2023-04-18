@@ -27,7 +27,7 @@ function getTopTenUsers($conn) {
     });
   
     // Return the top 10 users
-    return array_slice($users, 0, 10);
+    return array_slice($users, 0, 100);
 
   }
 
