@@ -137,20 +137,20 @@
         </div>
       </section>
       <section id="msg">
-        <div class="msg-title"> CATEGORIE CHALLENGE N1
+        <div class="msg-title"> Cryptanalyse
           <hr width="80%" size="2,5" color="#7C1520" />
         </div>
         <div class="c-article">
           <div class="c-high">
             <div class="c-info">
-              <div class="c-descri"> 
+              <div class="c-descri">
                 <?php
                     $statue ="";
                     $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$username'";
                     $resultuser = mysqli_query($conn, $queryuser);
                     $rowuser = mysqli_fetch_assoc($resultuser); // Fetch the result as an associative array
                     $user_id = $rowuser['id_user'];
-                    $querycheckchallenge = "SELECT `status` FROM `submissions` 
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
                     LEFT JOIN `users` ON user_id =`id_user`
                     LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
                     WHERE `name` ='Trop hache' AND `user_id`='$user_id';";
@@ -160,8 +160,11 @@
 
                     if ($nombreligne == 1) { echo '<img class="c-etat" src="media/vrai.png">'; }
                     else { echo '<img class="c-etat" src="media/faux.png">'; }
-                ?> 
+                ?>
                 <div class="num">01</div>
+                <a href="/Challenges/Crypto/Trop_haché/Trop_haché.txt" download>
+                <img src="https://cdn-icons-png.flaticon.com/512/58/58807.png?w=360" alt="Télécharger le fichier" class="download"></a>
+                </a>
                 <div class="c-title">Trop Haché</div>
               </div>
               <div class="c-statut"> Valeur des points : <br>
@@ -170,7 +173,7 @@
             </div>
             <a href="challenge.php#c-article" class="croix"></a>
           </div>
-          <div class="c-low"> Description du challenge ici. <br>Plusieurs lignes. </div>
+          <div class="c-low">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à partir d'un seul et unique caractère.<br></div>
         </div>
         <!-- Formulaire du flag -->
         <?php getflag($conn,"Trop hache",$username); ?>
