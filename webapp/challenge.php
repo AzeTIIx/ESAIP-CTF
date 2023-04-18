@@ -88,7 +88,7 @@
                 <a class="topnav_link" href="score.php">SCORE</a>
               </li>
               <li class="cpt">
-                <a class="topnav_link" href="compte.php"> 
+                <a class="topnav_link" href="compte.php">
                     <?php
                         require('config.php');
                         $email = $_SESSION['email'];
@@ -128,7 +128,7 @@
         </div>
       </div>
     </header>
-    
+
 
     <!--Recuperation de l'id du user-->
     <?php
@@ -148,16 +148,16 @@
         </div>
       </section>
       <section class="msg">
-        <div class="msg-title"> CATEGORIE CHALLENGE N1
+        <div class="msg-title"> Cryptanalyse
           <hr width="80%" size="2,5" color="#7C1520" />
         </div>
         <div class="c-box">
           <a href="ctf.php#msg" class="link">
             <div id="c-article">
               <div class="num">01</div>
-              <div class="c-title">Trop Haché</div> 
+              <div class="c-title">Trop Haché</div>
                 <?php
-                    $querycheckchallenge = "SELECT `status` FROM `submissions` 
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
                     LEFT JOIN `users` ON user_id =`id_user`
                     LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
                     WHERE `name` ='Trop hache' AND `user_id`='$user_id';";
@@ -176,12 +176,12 @@
                     }
                 ?> <br>
               <centre> 20 Points</centre>
-              <div class="c-txt">cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cd <br>cd </div>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
             </div>
           </a>
           <div id="c-article">
             <div class="num">02</div>
-            <div class="c-title">Nom du challenge</div>
+            <div class="c-title">to be XOR not to be</div>
             <img class="etat" src="media/faux.png"> Statut : Non validé <br>
             <centre>Points</centre>
             <div class="c-txt">cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cd <br>cd </div>
