@@ -400,6 +400,7 @@ img{
   justify-content: center;
   align-items: center;
   padding-top: 14vh; padding-bottom: 50px;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .msg-title{
@@ -512,6 +513,7 @@ input.box-input{
   font-size: 19px;
   font-family: 'kionaregular';
   height: 40px;
+  margin-bottom: 20px;
   margin: 5px; width: 97.5%;
   color: #fff;
   border: 0; outline:0;
