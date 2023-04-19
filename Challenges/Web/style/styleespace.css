@@ -1,0 +1,30 @@
+body {
+  background-image: url("../images/etoiles.jpg");
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 500%;
+  font-family: Star-Wars;
+}
+
+p {
+  font-size: 200%;
+  min-width: 30%;
+  max-width: 30%;
+  font-family: Star-Wars;
+}
+
+@font-face {
+  font-family: "Star-Wars";
+  src: url("../Star-Wars-Font-1/StarWarsFont/SF\ Distant\ Galaxy.ttf")
+    format("truetype");
+}
