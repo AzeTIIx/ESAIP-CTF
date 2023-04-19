@@ -235,6 +235,175 @@
           </a>
          </br>         
       </section>
+
+      <section class="msg">
+        <div class="msg-title"> Stéganographie
+          <hr width="80%" size="2,5" color="#7C1520" />
+        </div>
+        <div class="c-box">
+          <a href="Challenge4.php" class="link">
+            <div id="c-article">
+              <div class="num">04</div>
+              <div class="c-title">Steg'audio</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Steg audio' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 20 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+          <a href="Challenge5.php" class="link">
+            <div id="c-article">
+              <div class="num">05</div>
+              <div class="c-title">CPT</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='CPT' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 100 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+         </br>         
+      </section>
+
+      <section class="msg">
+        <div class="msg-title"> OSINT
+          <hr width="80%" size="2,5" color="#7C1520" />
+        </div>
+        <div class="c-box">
+          <a href="Challenge6.php" class="link">
+            <div id="c-article">
+              <div class="num">06</div>
+              <div class="c-title">Je me souviens plus</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Je me souviens plus' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 20 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+         </br>         
+      </section>
+
+      <section class="msg">
+        <div class="msg-title"> Réseau
+          <hr width="80%" size="2,5" color="#7C1520" />
+        </div>
+        <div class="c-box">
+          <a href="Challenge7.php" class="link">
+            <div id="c-article">
+              <div class="num">07</div>
+              <div class="c-title">Je suis caché dans le chapitre 7</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Je suis cache dans le chapitre 7' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 50 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+         </br>         
+      </section>
+
+      <section class="msg">
+        <div class="msg-title"> Forensics
+          <hr width="80%" size="2,5" color="#7C1520" />
+        </div>
+        <div class="c-box">
+          <a href="Challenge8.php" class="link">
+            <div id="c-article">
+              <div class="num">08</div>
+              <div class="c-title">Breaking my DB</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Breaking my DB' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 50 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+         </br>         
+      </section>
+
+
     </article>
     <footer>
       <section class="ft">
