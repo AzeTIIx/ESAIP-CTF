@@ -204,32 +204,33 @@
     </article>
 
     <footer>
-      <section class="ft">
-        <div class="info">
-          <div class="t-info">
-            <div class="f-title">Lien rapide</div>
-            <div class="f-txt">
-              <a href="accueil.php">accueil</a>
-              <br><a href="challenge.php">challenge</a>
-              <br>github
-            </div>
-          </div>
-          <div class="t-info">
-            <div class="f-title">Information</div>
-            <div class="f-txt"></div>
-          </div>
-          <div class="t-info">
-            <div class="f-title">Contact</div>
-            <div class="f-txt">
-              E-mail : créer mail
-            </div>
-          </div>
-        </div>
-        <div class="f-txt2">
-          Copyright © 2023 - ESAIP - Tout droit réservé.
-        </div>
-      </section>
-    </footer>
+          <section class="ft">
+              <div class="info">
+              <div class="t-info">
+                  <div class="f-title">Lien rapide</div>
+                  <div class="f-txt">
+                  <a href="accueil.php">accueil</a>
+                  <br><a href="challenge.php">challenge</a>
+                  <br>github
+                  </div>
+              </div>
+              <div class="t-info">
+                  <div class="f-title">Information</div>
+                  <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
+              </div>
+              <div class="t-info">
+                  <div class="f-title">Contact</div>
+                  <div class="f-txt">
+                  caimin.ing2024@esaip.org<br>
+                  851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                  </div>
+              </div>
+              </div>
+              <div class="f-txt2">
+              Copyright © 2023 - ESAIP - Tout droit réservé.
+              </div>
+          </section>
+      </footer>
 
   </body>
 </html>
