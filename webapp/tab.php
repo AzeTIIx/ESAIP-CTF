@@ -7,10 +7,10 @@ require('config.php');
 
 function getTopTenUsers($conn) {
 
-  
+
     $sql = "SELECT username, MAX(points) as points FROM tableaupoints GROUP BY username ORDER BY points DESC";
     $result = mysqli_query($conn, $sql);
-    
+
     if (mysqli_num_rows($result) > 0) {
         $users = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -25,7 +25,7 @@ function getTopTenUsers($conn) {
     usort($users, function($a, $b) {
       return $b['points'] - $a['points'];
     });
-  
+
     // Return the top 10 users
     return array_slice($users, 0, 100);
 
@@ -33,7 +33,7 @@ function getTopTenUsers($conn) {
 
 
 
-   
+
 function getflag($conn, $challenge, $user) {
 
     //echo $user;
@@ -46,7 +46,7 @@ function getflag($conn, $challenge, $user) {
   $queryflag = "SELECT `flag` FROM `challenges` WHERE `name` = '$challenge'";
   $resultflag = mysqli_query($conn, $queryflag);
   $rowflag = mysqli_fetch_assoc($resultflag);
-  
+
 
   $queryuser= "SELECT `id_user` FROM `users` WHERE `username` = '$user'";
   $resultuser = mysqli_query($conn, $queryuser);
@@ -58,7 +58,7 @@ function getflag($conn, $challenge, $user) {
   $rowchallengeid = mysqli_fetch_assoc($resultchallengeid); // Fetch the result as an associative array
   $idchallenge = $rowchallengeid['id_challenge']; // Access the value you need from the associative array;
 
-  $querycheckchallenge = "SELECT `status` FROM `submissions` 
+  $querycheckchallenge = "SELECT `status` FROM `submissions`
     LEFT JOIN `users` ON user_id =`id_user`
     LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
     WHERE `name` ='$challenge' AND `user_id`='$user_id';";
@@ -99,7 +99,7 @@ function getflag($conn, $challenge, $user) {
       if ($flaghashed === $flagFromDB && mysqli_num_rows($resultcheckchallenge) == 0) {
         //echo $user_id;
          //echo $challenge;
-        $queryvalid = "INSERT INTO `submissions`(`id_submission`, `status`, `timestamp`, `user_id`, `challenge_id`) 
+        $queryvalid = "INSERT INTO `submissions`(`id_submission`, `status`, `timestamp`, `user_id`, `challenge_id`)
                        VALUES (DEFAULT,'valid',CURRENT_TIMESTAMP(),'$user_id','$idchallenge')";
         $resultvalid = mysqli_query($conn, $queryvalid);
         $nombreligne=1;
@@ -108,7 +108,7 @@ function getflag($conn, $challenge, $user) {
       }
       else if(mysqli_num_rows($resultcheckchallenge) == 0) {
         echo 'Mauvaise réponse !';
-       
+
       }
     } else {
       // La clé 'flag' n'est pas définie dans le tableau $_POST
