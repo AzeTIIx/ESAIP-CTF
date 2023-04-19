@@ -160,12 +160,13 @@
                 </div>
                 <div class="t-info">
                     <div class="f-title">Information</div>
-                    <div class="f-txt"></div>
+                    <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
                 </div>
                 <div class="t-info">
                     <div class="f-title">Contact</div>
                     <div class="f-txt">
-                    E-mail : créer mail
+                    caimin.ing2024@esaip.org<br>
+                    851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
                     </div>
                 </div>
                 </div>
