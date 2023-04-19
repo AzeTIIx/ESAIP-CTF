@@ -121,8 +121,8 @@
                 </div>
                 
                 <script>
-                    Chart.defaults.global.title.display = true;
-                    Chart.defaults.global.title.text = "TITRE";
+                    //Chart.defaults.global.title.display = true;
+                    //Chart.defaults.global.title.text = "TITRE";
                     
                 </script>
 
