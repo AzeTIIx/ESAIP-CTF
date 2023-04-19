@@ -14,5 +14,5 @@ Etant amateurs de challenges cybersécurité, nous avons décidé de faire de to
 
 <h3> L'EQUIPE </h3>
 
-e projet CTFxESAIP a été réalisé dans son intégralité par un groupe de 4 étudiants esaipiens, en majeure Cybersécurité et Big Data. Les membres sont les suivants : Charles <i>AIMIN</i>, Emma BRIEU, Alessandro GADRAT et Alexandre ROUILLE.
+Le projet CTFxESAIP a été réalisé dans son intégralité par un groupe de 4 étudiants esaipiens, en majeure Cybersécurité et Big Data. Les membres sont les suivants : Charles <i>AIMIN</i>, Emma BRIEU, Alessandro GADRAT et Alexandre ROUILLE.
 La création des challenges et leur intégration, le design du site web, la gestion de la base de données, la configuration du serveur sont des sujets qui ont tous été traités par nos soins.
