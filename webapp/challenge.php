@@ -152,7 +152,7 @@
           <hr width="80%" size="2,5" color="#7C1520" />
         </div>
         <div class="c-box">
-          <a href="ctf.php#msg" class="link">
+          <a href="Challenge1.php" class="link">
             <div id="c-article">
               <div class="num">01</div>
               <div class="c-title">Trop Haché</div>
@@ -179,35 +179,61 @@
               <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
             </div>
           </a>
-          <div id="c-article">
-            <div class="num">02</div>
-            <div class="c-title">to be XOR not to be</div>
-            <img class="etat" src="media/faux.png"> Statut : Non validé <br>
-            <centre>Points</centre>
-            <div class="c-txt">cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cd <br>cd </div>
-          </div>
-          <div id="c-article">
-            <div class="num">03</div>
-            <div class="c-title">Nom du challenge</div>
-            <img class="etat" src="media/faux.png"> Statut : Non validé <br>
-            <centre>Points</centre>
-            <div class="c-txt">cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cd <br>cd </div>
-          </div>
-          <div id="c-article">
-            <div class="num">04</div>
-            <div class="c-title">Nom du challenge</div>
-            <img class="etat" src="media/vrai.png"> Statut : Validé <br>
-            <centre>Points</centre>
-            <div class="c-txt">cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd cd <br>cd </div>
-          </div>
-          <div id="c-article">
-            <div class="num">05</div>
-            <div class="c-title">Nom du challenge</div>
-            <img class="etat" src="media/faux.png"> Statut : Non validé <br>
-            <centre>Points</centre>
-            <div class="c-txt">blabla</div>
-          </div>
-        </div>
+          <a href="Challenge2.php" class="link">
+            <div id="c-article">
+              <div class="num">02</div>
+              <div class="c-title">To be XOR or not to be</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='To be XOR or not to be' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 20 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+          <a href="Challenge3.php" class="link">
+            <div id="c-article">
+              <div class="num">03</div>
+              <div class="c-title">Crack ZIP</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Crack ZIP' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 50 Points</centre>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+            </div>
+          </a>
+         </br>         
       </section>
     </article>
     <footer>
