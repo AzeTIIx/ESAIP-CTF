@@ -21,20 +21,20 @@
                   icon.className = "open";
                   root.style.overflowY = "hidden";
                 } else {
-                  menu.className = "";                    
+                  menu.className = "";
                   icon.className = "";
                   root.style.overflowY = "";
                 }
               }
         </script>
 
-        <header>  
+        <header>
             <div id="root">
                 <div id="topnav" class="topnav">
                     <div class="logo">
                     <a id="home_link" href="accueil.php"> <img src="media/logo.png" class="logo"> </a>
                     </div>
-                    
+
                     <?php
                         session_start();
                         if(!isset($_SESSION["email"])) { ?>
@@ -117,13 +117,13 @@
             <section class="msg">
                 <div class="msg-title">
                     GRAPHIQUE DE VOS POINTS
-                    <hr width="80%" size="2,5" color="#7C1520"/>
+                    <hr width="100%" size="2,5" color="#7C1520"/>
                 </div>
-                
+
                 <script>
                     //Chart.defaults.global.title.display = true;
                     //Chart.defaults.global.title.text = "TITRE";
-                    
+
                 </script>
 
                 <div class="chart-container">
@@ -134,8 +134,8 @@
 
         <div class="clasM">
             <?php include("tab.php");
-            
-            echo " 
+
+            echo "
             <div class='msg-title'><div class='msg2'>Classement des joueurs
             <hr width='80%' size='2,5' color='#7C1520'/></div></div>
             <table border-radius='20px' align='center'>
@@ -145,7 +145,7 @@
                     <th>POINTS</th>
                 </tr>
             ";
-            
+
             $users = getTopTenUsers($conn);
             $rank = 1;
             foreach ($users as $user) {
@@ -156,13 +156,12 @@
                 echo "</tr>";
                 $rank++;
             }
-            
+
           echo "</table>";
             ?>
-        
-        </div>
 
-        <footer>
+        </div>
+<footer>
             <section class="ft">
                 <div class="info">
                 <div class="t-info">
