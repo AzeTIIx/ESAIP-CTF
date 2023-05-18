@@ -21,20 +21,20 @@
             icon.className = "open";
             root.style.overflowY = "hidden";
           } else {
-            menu.className = "";                    
+            menu.className = "";
             icon.className = "";
             root.style.overflowY = "";
           }
         }
     </script>
 
-        <header>  
+        <header>
             <div id="root">
                 <div id="topnav" class="topnav">
                     <div class="logo">
                     <a id="home_link" href="accueil.php"> <img src="media/logo.png" class="logo"> </a>
                     </div>
-                    
+
                     <?php
                         function is_connected() {
                             session_start(); // Démarre la session
@@ -45,7 +45,7 @@
                                 return false;
                             }
                         }
-                        
+
 
                         if(is_connected()) { ?>
                             <!-- Classic Menu -->
@@ -123,7 +123,7 @@
         <div class="title">FORMULAIRE</div>
         <div class="img"><img src="media/mask.jpg"></div>
       </section>
-      
+
       <section class="form">
         <div class="form-title">
           FORMULAIRE DE CONNEXION
@@ -139,23 +139,23 @@
 
             $email = stripslashes($_REQUEST['email']);
             $email = mysqli_real_escape_string($conn, $email);
-            
+
 
 
             $query = "SELECT * FROM `users` WHERE email='$email' and password='".hash('sha256', $password)."'";
             $result = mysqli_query($conn,$query);
 
-          
-            
+
+
             if (mysqli_num_rows($result) == 1) {
               $_SESSION['email'] = $email;
               $user = mysqli_fetch_assoc($result);
 
               // vérifier si l'utilisateur est un administrateur ou un utilisateur
               if ($user['type'] == 'administrateur') {
-                header('location: admin/compteAdmin');		  
+                header('location: admin/compteAdmin.php');
               }else{
-                header('location: compte');
+                header('location: compte.php');
               }
             }else{
               $message = "Impossible de se connecter : le nom d'utilisateur ou le mot de passe est incorrect.";
@@ -179,33 +179,33 @@
       </section>
     </article>
 
-    <footer>
-        <section class="ft">
-            <div class="info">
-            <div class="t-info">
-                <div class="f-title">Lien rapide</div>
-                <div class="f-txt">
-                <a href="accueil.php">accueil</a>
-                <br><a href="challenge.php">challenge</a>
-                <br>github
+<footer>
+            <section class="ft">
+                <div class="info">
+                <div class="t-info">
+                    <div class="f-title">Lien rapide</div>
+                    <div class="f-txt">
+                    <a href="accueil.php">accueil</a>
+                    <br><a href="challenge.php">challenge</a>
+                    <br>github
+                    </div>
                 </div>
-            </div>
-            <div class="t-info">
-                <div class="f-title">Information</div>
-                <div class="f-txt"></div>
-            </div>
-            <div class="t-info">
-                <div class="f-title">Contact</div>
-                <div class="f-txt">
-                E-mail : créer mail
+                <div class="t-info">
+                    <div class="f-title">Information</div>
+                    <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
                 </div>
-            </div>
-            </div>
-            <div class="f-txt2">
-            Copyright © 2023 - ESAIP - Tout droit réservé.
-            </div>
-        </section>
-    </footer>
-
+                <div class="t-info">
+                    <div class="f-title">Contact</div>
+                    <div class="f-txt">
+                    caimin.ing2024@esaip.org<br>
+                    851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                    </div>
+                </div>
+                </div>
+                <div class="f-txt2">
+                Copyright © 2023 - ESAIP - Tout droit réservé.
+                </div>
+            </section>
+        </footer>
   </body>
 </html>
