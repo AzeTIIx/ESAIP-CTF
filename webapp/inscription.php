@@ -21,20 +21,20 @@
             icon.className = "open";
             root.style.overflowY = "hidden";
           } else {
-            menu.className = "";                    
+            menu.className = "";
             icon.className = "";
             root.style.overflowY = "";
           }
         }
     </script>
 
-    <header>  
+    <header>
         <div id="root">
             <div id="topnav" class="topnav">
                 <div class="logo">
                 <a id="home_link" href="accueil.php"> <img src="media/logo.png" class="logo"> </a>
                 </div>
-                
+
                 <?php
                     session_start();
                     if(!isset($_SESSION["email"])) { ?>
@@ -114,7 +114,7 @@
         <div class="title">FORMULAIRE</div>
         <div class="img"><img src="media/mask.jpg"></div>
       </section>
-      
+
       <section class="form">
         <div class="form-title">
           FORMULAIRE D'INSCRIPTION
@@ -126,20 +126,20 @@
             if (isset($_REQUEST['username'], $_REQUEST['password'], $_REQUEST['email'])){
                 // récupérer le nom d'utilisateur et supprimer les antislashes ajoutés par le formulaire
                 $username = stripslashes($_REQUEST['username']);
-                $username = mysqli_real_escape_string($conn, $username); 
-                
+                $username = mysqli_real_escape_string($conn, $username);
+
                 // récupérer le mot de passe et supprimer les antislashes ajoutés par le formulaire
                 $password = stripslashes($_REQUEST['password']);
                 $password = mysqli_real_escape_string($conn, $password);
-            
-                // récupérer l'email 
+
+                // récupérer l'email
                 $email = stripslashes($_REQUEST['email']);
                 $email = mysqli_real_escape_string($conn, $email);
 
                 // Vérifiez si le nom d'utilisateur existe déjà dans la base de données
                 $check_query_name = "SELECT * FROM `users` WHERE `username` = '$username'";
                 $check_result_name = mysqli_query($conn, $check_query_name);
-                
+
                 $check_query_email = "SELECT * FROM `users` WHERE `email` = '$email'";
                 $check_result_email = mysqli_query($conn, $check_query_email);
 
@@ -158,7 +158,7 @@
                       </div>
                     </form> ";
 
-                            
+
                 } elseif(mysqli_num_rows($check_result_email) > 0){
                     echo "
                     <form class='box' action='' method='post'>
@@ -173,7 +173,7 @@
                       </div>
                     </form> ";
                 }
-                
+
                 else {
                     // Insérez les données dans la base de données
                     $query = "INSERT INTO `users`(`email`,`username`, `password`, `type`) VALUES ('$email','$username','".hash('sha256', $password)."','user')";
@@ -203,34 +203,33 @@
       </section>
     </article>
 
-    <footer>
-          <section class="ft">
-              <div class="info">
-              <div class="t-info">
-                  <div class="f-title">Lien rapide</div>
-                  <div class="f-txt">
-                  <a href="accueil.php">accueil</a>
-                  <br><a href="challenge.php">challenge</a>
-                  <br>github
-                  </div>
-              </div>
-              <div class="t-info">
-                  <div class="f-title">Information</div>
-                  <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
-              </div>
-              <div class="t-info">
-                  <div class="f-title">Contact</div>
-                  <div class="f-txt">
-                  caimin.ing2024@esaip.org<br>
-                  851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
-                  </div>
-              </div>
-              </div>
-              <div class="f-txt2">
-              Copyright © 2023 - ESAIP - Tout droit réservé.
-              </div>
-          </section>
-      </footer>
-
+<footer>
+            <section class="ft">
+                <div class="info">
+                <div class="t-info">
+                    <div class="f-title">Lien rapide</div>
+                    <div class="f-txt">
+                    <a href="accueil.php">accueil</a>
+                    <br><a href="challenge.php">challenge</a>
+                    <br>github
+                    </div>
+                </div>
+                <div class="t-info">
+                    <div class="f-title">Information</div>
+                    <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
+                </div>
+                <div class="t-info">
+                    <div class="f-title">Contact</div>
+                    <div class="f-txt">
+                    caimin.ing2024@esaip.org<br>
+                    851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                    </div>
+                </div>
+                </div>
+                <div class="f-txt2">
+                Copyright © 2023 - ESAIP - Tout droit réservé.
+                </div>
+            </section>
+        </footer>
   </body>
 </html>
