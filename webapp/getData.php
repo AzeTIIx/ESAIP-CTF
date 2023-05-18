@@ -19,5 +19,5 @@ mysqli_close($conn);
 
 //now print the data
 print json_encode($data);
-  
+
 ?>
