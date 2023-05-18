@@ -162,7 +162,7 @@
                     else { echo '<img class="c-etat" src="media/faux.png">'; }
                 ?>
                 <div class="num">08</div>
-                <a href="/Challenges/Crypto/Trop_haché/To_be_XOR_or_not_to_be.txt" download>
+                <a href="/Challenges/Forensics/database.kdbx" download>
                 <img src="https://cdn-icons-png.flaticon.com/512/58/58807.png?w=360" alt="Télécharger le fichier" class="download"></a>
                 </a>
                 <div class="c-title">Breaking my DB</div>
@@ -173,40 +173,39 @@
             </div>
             <a href="challenge.php#c-article" class="croix"></a>
           </div>
-          <div class="c-low">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à partir d'un seul et unique caractère.<br></div>
+          <div class="c-low">Un enquêteur a retrouvé sur l'ordinateur de Monsieur Ripoll, un fichier chiffré en format Keepass. Le nom du fichier est "database.kdbx". Selon les informations de l'enquêteur, ce fichier pourrait contenir des informations sensibles sur les clients de l'entreprise pour laquelle travaille Monsieur Ripoll.<br></div>
         </div>
         <!-- Formulaire du flag -->
         <?php getflag($conn,"Breaking my DB",$username); ?>
       </section>
     </article>
-
-    <footer>
-          <section class="ft">
-              <div class="info">
-              <div class="t-info">
-                  <div class="f-title">Lien rapide</div>
-                  <div class="f-txt">
-                  <a href="accueil.php">accueil</a>
-                  <br><a href="challenge.php">challenge</a>
-                  <br>github
-                  </div>
-              </div>
-              <div class="t-info">
-                  <div class="f-title">Information</div>
-                  <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
-              </div>
-              <div class="t-info">
-                  <div class="f-title">Contact</div>
-                  <div class="f-txt">
-                  caimin.ing2024@esaip.org<br>
-                  851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
-                  </div>
-              </div>
-              </div>
-              <div class="f-txt2">
-              Copyright © 2023 - ESAIP - Tout droit réservé.
-              </div>
-          </section>
-      </footer>
+<footer>
+            <section class="ft">
+                <div class="info">
+                <div class="t-info">
+                    <div class="f-title">Lien rapide</div>
+                    <div class="f-txt">
+                    <a href="accueil.php">accueil</a>
+                    <br><a href="challenge.php">challenge</a>
+                    <br>github
+                    </div>
+                </div>
+                <div class="t-info">
+                    <div class="f-title">Information</div>
+                    <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
+                </div>
+                <div class="t-info">
+                    <div class="f-title">Contact</div>
+                    <div class="f-txt">
+                    caimin.ing2024@esaip.org<br>
+                    851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                    </div>
+                </div>
+                </div>
+                <div class="f-txt2">
+                Copyright © 2023 - ESAIP - Tout droit réservé.
+                </div>
+            </section>
+        </footer>
   </body>
 </html>
