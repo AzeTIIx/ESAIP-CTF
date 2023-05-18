@@ -162,10 +162,10 @@
                     else { echo '<img class="c-etat" src="media/faux.png">'; }
                 ?>
                 <div class="num">07</div>
-                <a href="/Challenges/Crypto/Trop_haché/To_be_XOR_or_not_to_be.txt" download>
+                <a href="/Challenges/Réseau/Je_suis_caché_dans_le_chapitre_7/Je_suis_caché.zip" download>
                 <img src="https://cdn-icons-png.flaticon.com/512/58/58807.png?w=360" alt="Télécharger le fichier" class="download"></a>
                 </a>
-                <div class="c-title">Je suis caché dans le chapitre 7</div>
+                <div class="c-title">Je suis dans le chap 7</div>
               </div>
               <div class="c-statut"> Valeur des points : <br>
                 <centre> 50 Nb points</centre>
@@ -173,39 +173,39 @@
             </div>
             <a href="challenge.php#c-article" class="croix"></a>
           </div>
-          <div class="c-low">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à partir d'un seul et unique caractère.<br></div>
+          <div class="c-low">Alessandro, en bon élève, veut s’avancer sur son cours de pentest et là c’est le drame ! <br><br> Il se trouve que sa connexion n'était pas sécurisée et maintenant son mot de passe est dans la nature. <br><br>Le flag est sans accent <br> </div>
         </div>
         <!-- Formulaire du flag -->
         <?php getflag($conn,"Je suis cache dans le chapitre 7",$username); ?>
       </section>
     </article>
-    <footer>
-        <section class="ft">
-            <div class="info">
-            <div class="t-info">
-                <div class="f-title">Lien rapide</div>
-                <div class="f-txt">
-                <a href="accueil.php">accueil</a>
-                <br><a href="challenge.php">challenge</a>
-                <br>github
+<footer>
+            <section class="ft">
+                <div class="info">
+                <div class="t-info">
+                    <div class="f-title">Lien rapide</div>
+                    <div class="f-txt">
+                    <a href="accueil.php">accueil</a>
+                    <br><a href="challenge.php">challenge</a>
+                    <br>github
+                    </div>
                 </div>
-            </div>
-            <div class="t-info">
-                <div class="f-title">Information</div>
-                <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
-            </div>
-            <div class="t-info">
-                <div class="f-title">Contact</div>
-                <div class="f-txt">
-                caimin.ing2024@esaip.org<br>
-                851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                <div class="t-info">
+                    <div class="f-title">Information</div>
+                    <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
                 </div>
-            </div>
-            </div>
-            <div class="f-txt2">
-            Copyright © 2023 - ESAIP - Tout droit réservé.
-            </div>
-        </section>
-    </footer>
+                <div class="t-info">
+                    <div class="f-title">Contact</div>
+                    <div class="f-txt">
+                    caimin.ing2024@esaip.org<br>
+                    851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                    </div>
+                </div>
+                </div>
+                <div class="f-txt2">
+                Copyright © 2023 - ESAIP - Tout droit réservé.
+                </div>
+            </section>
+        </footer>
   </body>
 </html>
