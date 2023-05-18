@@ -17,20 +17,20 @@
                   icon.className = "open";
                   root.style.overflowY = "hidden";
                 } else {
-                  menu.className = "";                    
+                  menu.className = "";
                   icon.className = "";
                   root.style.overflowY = "";
                 }
               }
         </script>
 
-        <header>  
+        <header>
             <div id="root">
                 <div id="topnav" class="topnav">
                     <div class="logo">
                     <a id="home_link" href="accueil.php"> <img src="media/logo.png" class="logo"> </a>
                     </div>
-                    
+
                     <?php
                         session_start();
                         if(!isset($_SESSION["email"])) { ?>
@@ -142,10 +142,9 @@
                         </div>
                     </div>
                 </div>
-            
+
             </section>
         </article>
-
 
         <footer>
             <section class="ft">
