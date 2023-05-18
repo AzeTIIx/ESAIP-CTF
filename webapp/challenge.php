@@ -176,7 +176,7 @@
                     }
                 ?> <br>
               <centre> 20 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter.<br></div>
             </div>
           </a>
           <a href="Challenge2.php" class="link">
@@ -203,7 +203,7 @@
                     }
                 ?> <br>
               <centre> 20 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">On a réussi à récupérer un programme de chiffrement, mais il n’est pas complet à vous de jouer vous verrez c’est facile.<br></div>
             </div>
           </a>
           <a href="Challenge3.php" class="link">
@@ -230,10 +230,10 @@
                     }
                 ?> <br>
               <centre> 50 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">Des enquêteurs ont récupéré une archive zip suspecte que Matteo a téléchargé sur son ordinateur, à prioris c’est un crack photoshop mais rien n’est sûr.<br></div>
             </div>
           </a>
-         </br>         
+         </br>
       </section>
 
       <section class="msg">
@@ -265,7 +265,7 @@
                     }
                 ?> <br>
               <centre> 20 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">Tom voulait écouter tranquillement le dernier album de Metallica mais tout ne s’est pas passé comme prévu mvoyez.<br><br> Trouver ce qui a pu arriver au morceau de notre pauvre Tom<br></div>
             </div>
           </a>
           <a href="Challenge5.php" class="link">
@@ -292,10 +292,37 @@
                     }
                 ?> <br>
               <centre> 100 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">On a récupéré les images sur l’appareil photo de Monsieur Ripoll, cependant l’une d’entre elles semble corrompue ! <br><br> Trouvez un moyen de l’ouvrir.<br></div>
             </div>
           </a>
-         </br>         
+         <a href="Challenge11.php" class="link">
+            <div id="c-article">
+              <div class="num">11</div>
+              <div class="c-title">le rageux</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='rage' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 50 Points</centre>
+              <div class="c-txt">Le grand chef suprème de l'empire, Darth AzeTIx, a transférer une image à ses généraux et les rebelles ont réussis à l'intercepter.<br><br>Nous savons qu'il est sur les nerfs en ce moment, sa mimique : "MAIS COMMENT"<br><br>Trouvez les informations cachées dans l'image.<br></div>
+            </div>
+          </a>
+         </br>
       </section>
 
       <section class="msg">
@@ -327,10 +354,36 @@
                     }
                 ?> <br>
               <centre> 20 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">En fouillant sur internet, la police a découvert une photo postée par M. Ripoll lors de ses dernières vacances. Sur la photo, on pouvait voir un clocher traditionnel typique de la région, avec une vue sur les montagnes en arrière-plan. <br><br>Retrouve le village où est allé Monsieur Ripoll, le flag est au format : <br><br>ESAIP{nomduvillage}<br></div>
             </div>
           </a>
-         </br>         
+          <a href="Challenge9.php" class="link">
+            <div id="c-article">
+              <div class="num">09</div>
+              <div class="c-title">Paul Renines</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='paul' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 100 Points</centre>
+              <div class="c-txt">Monsieur Ripoll est impliqué dans une enquête policière concernant un cambriolage qui a eu lieu dans les locaux de l'école. Soupçonnée par la police, elle souhaite l'interroger rapidement pour résoudre cette affaire.<br>Il serait lié à une personne dénomée “Michelle” possédant un chien nommé “Cocacola”.<br>Pour commencer le chall, on viendra vous chercher.</div>
+           </div>
+        </a>
       </section>
 
       <section class="msg">
@@ -341,7 +394,7 @@
           <a href="Challenge7.php" class="link">
             <div id="c-article">
               <div class="num">07</div>
-              <div class="c-title">Je suis caché dans le chapitre 7</div>
+              <div class="c-title">Je suis dans le chap 7</div>
                 <?php
                     $querycheckchallenge = "SELECT `status` FROM `submissions`
                     LEFT JOIN `users` ON user_id =`id_user`
@@ -362,10 +415,10 @@
                     }
                 ?> <br>
               <centre> 50 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">Alessandro, en bon élève, veut s’avancer sur son cours de pentest et là c’est le drame ! <br><br> Il se trouve que sa connexion n'était pas sécurisée et maintenant son mot de passe est dans la nature.<br></div>
             </div>
           </a>
-         </br>         
+         </br>
       </section>
 
       <section class="msg">
@@ -397,41 +450,109 @@
                     }
                 ?> <br>
               <centre> 50 Points</centre>
-              <div class="c-txt">Le département de la Sécurité de l'ESAIP a reçu une alerte signalant qu'un pirate informatique avait réussi à  pénétrer dans leur système et avait volé une grande quantité de données confidentielles. Les enquêteurs ont pu récupérer un fichier contenant 22 hash de différents types, mais ils ne savent pas comment les décrypter. Les experts en sécurité ont analysé les hash et ont réalisé qu'ils avaient tous été générés à  partir d'un seul et unique caractère.<br></div>
+              <div class="c-txt">Un enquêteur a retrouvé sur l'ordinateur de Monsieur Ripoll, un fichier chiffré en format Keepass. Le nom du fichier est "database.kdbx". Selon les informations de l'enquêteur, ce fichier pourrait contenir des informations sensibles sur les clients de l'entreprise pour laquelle travaille Monsieur Ripoll.<br></div>
             </div>
           </a>
-         </br>         
+         </br>
       </section>
 
+   <section class="msg">
+        <div class="msg-title"> Web
+          <hr width="80%" size="2,5" color="#7C1520" />
+        </div>
+        <div class="c-box">
+          <a href="Challenge10.php" class="link">
+            <div id="c-article">
+              <div class="num">10</div>
+              <div class="c-title">Dans une galaxie lointaine</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='star' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 100 Points</centre>
+              <div class="c-txt">Vous êtes un enquêteur spatial à la recherche du savoir, certains des plus grands Jedi connus de nos jours possèdent un secret bien gardé… Parmi les 3 plus grands manieurs de sabre de la galaxie, un seul possède un secret lui permettant de cacher sa véritable nature à l'univers !<br></div>
+            </div>
+          </a>
+         </br>
+      </section>
 
+      <section class="msg">
+        <div class="msg-title"> Misc
+          <hr width="80%" size="2,5" color="#7C1520" />
+        </div>
+        <div class="c-box">
+          <a href="ChallengeEnd.php" class="link">
+            <div id="c-article">
+              <div class="num">The End</div>
+              <div class="c-title">Merci !</div>
+                <?php
+                    $querycheckchallenge = "SELECT `status` FROM `submissions`
+                    LEFT JOIN `users` ON user_id =`id_user`
+                    LEFT JOIN `challenges` ON `challenge_id`=`id_challenge`
+                    WHERE `name` ='Je suis cache dans le chapitre 7' AND `user_id`='$user_id';";
+                    $resultcheckchallenge = mysqli_query($conn, $querycheckchallenge);
+                    $rowcheckchallenge = mysqli_fetch_assoc($resultcheckchallenge);
+                    $nombreligne = mysqli_num_rows($resultcheckchallenge);
+                    if ($nombreligne == 0) {
+                        echo '
+                        <img class="etat" src="media/faux.png">';
+                        echo 'Statut : Non validé';
+                    }
+                    else {
+                        echo '
+                            <img class="etat" src="media/vrai.png">';
+                        echo 'Statut : Validé';
+                    }
+                ?> <br>
+              <centre> 20 Points</centre>
+              <div class="c-txt">Merci d'avoir participer à la première édition du Hack n FLag, vous pouvez prendre 5 minutes pour répondre à ce questionnaire pour nous aider à nous améliorer si vous le souhaitez !<br></div>
+            </div>
+          </a>
+         </br>
+      </section>
     </article>
-    <footer>
-          <section class="ft">
-              <div class="info">
-              <div class="t-info">
-                  <div class="f-title">Lien rapide</div>
-                  <div class="f-txt">
-                  <a href="accueil.php">accueil</a>
-                  <br><a href="challenge.php">challenge</a>
-                  <br>github
-                  </div>
-              </div>
-              <div class="t-info">
-                  <div class="f-title">Information</div>
-                  <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
-              </div>
-              <div class="t-info">
-                  <div class="f-title">Contact</div>
-                  <div class="f-txt">
-                  caimin.ing2024@esaip.org<br>
-                  851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
-                  </div>
-              </div>
-              </div>
-              <div class="f-txt2">
-              Copyright © 2023 - ESAIP - Tout droit réservé.
-              </div>
-          </section>
-      </footer>
+<footer>
+            <section class="ft">
+                <div class="info">
+                <div class="t-info">
+                    <div class="f-title">Lien rapide</div>
+                    <div class="f-txt">
+                    <a href="accueil.php">accueil</a>
+                    <br><a href="challenge.php">challenge</a>
+                    <br>github
+                    </div>
+                </div>
+                <div class="t-info">
+                    <div class="f-title">Information</div>
+                    <div class="f-txt">Vous pouvez voir l'état de vos challenges sur la page prévue à cet effet.</div>
+                </div>
+                <div class="t-info">
+                    <div class="f-title">Contact</div>
+                    <div class="f-txt">
+                    caimin.ing2024@esaip.org<br>
+                    851 Bâtiments B & C, VERT POMONE,<br>Allée de Pomone, 13 090 AIX EN PROVENCE
+                    </div>
+                </div>
+                </div>
+                <div class="f-txt2">
+                Copyright © 2023 - ESAIP - Tout droit réservé.
+                </div>
+            </section>
+        </footer>
   </body>
 </html>
