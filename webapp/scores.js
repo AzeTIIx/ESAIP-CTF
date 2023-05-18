@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:80/getData.php",
-      
+        url: "http://vps-b1b78950.vps.ovh.net/getData.php", //replace with the location of your host
+
         type: "GET",
         success: function(data) {
             //console.log(data);
@@ -30,7 +30,7 @@ $(document).ready(function() {
               labels: temps,
               datasets: [],
             };
-      
+
 
           for (var player in users) {
               chartdata.datasets.push({
