@@ -17,20 +17,20 @@
                   icon.className = "open";
                   root.style.overflowY = "hidden";
                 } else {
-                  menu.className = "";                    
+                  menu.className = "";
                   icon.className = "";
                   root.style.overflowY = "";
                 }
               }
         </script>
 
-<header>  
+<header>
             <div id="root">
                 <div id="topnav" class="topnav">
                     <div class="logo">
                     <a id="home_link" href="accueil.php"> <img src="media/logo.png" class="logo"> </a>
                     </div>
-                    
+
                     <?php
                         session_start();
                         if(!isset($_SESSION["email"])) { ?>
@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="box">
-					<h1>Bienvenue <?php
+                                        <h1>Bienvenue <?php
                     require('config.php');
                     $email = $_SESSION['email'];
                     $queryUsername = "SELECT `username` FROM `users` WHERE email='$email'";
@@ -128,24 +128,23 @@
                     $querypoint="SELECT points FROM `tableaupoints`
                     WHERE username ='$username'
                     ORDER BY points DESC
-                    LIMIT 1"; 
+                    LIMIT 1";
                     $resultpoint = mysqli_query($conn, $querypoint);
                     $rowpoint = mysqli_fetch_assoc($resultpoint); // Fetch the result as an associative array
                     $point = $rowpoint['points'];
-                    
+
                     echo $point;
 
                     ?>
 
-					<p>Voici votre espace utilisateur.</p>
-					<br><a href="logout.php">Déconnexion</a>
-					<a href="score.php">Score</a>
-				</div>
-            
+                                        <p>Voici votre espace utilisateur.</p>
+                                        <br><a href="logout.php">Déconnexion</a>
+                                        <a href="score.php">Score</a>
+                                </div>
+
             </section>
         </article>
-
-        <footer>
+          <footer>
             <section class="ft">
                 <div class="info">
                 <div class="t-info">
